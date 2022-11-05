@@ -16,4 +16,5 @@ public class Transacoes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    saldo
 }

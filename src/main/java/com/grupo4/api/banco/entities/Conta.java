@@ -13,12 +13,17 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Table(name = "conta")
 public class Conta {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Integer agencia;
+
     private Integer numeroConta;
+
     private Cliente cliente;
+
     private BigDecimal saldo;
 
 

@@ -25,4 +25,14 @@ public class ClienteService {
 
     public void update(Cliente cliente){
     }
+
+    public void createClienteList(List<Cliente> clientes){
+
+    }
+    public Cliente createCliente(Cliente cliente){
+        return cliente;
+    }
+     public void deleteById( Long id){
+
+     }
 }

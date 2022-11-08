@@ -36,6 +36,24 @@ public class ClienteController {
     public void update(Cliente cliente) {
         service.update(cliente); }
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation("New Cliente")
+    public Cliente createCliente(Cliente cliente) {
+        return service.createCliente(cliente);
+    }
+    @PostMapping("/list")
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation(" Cliente")
+    public void createClienteList(List<Cliente> clientes) {
+        service.createClienteList(clientes);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ApiOperation("Delete Cliente")
+    public void deleteById (Long id) {
+        service.deleteById(id);
+    }
 
     //get
     //post

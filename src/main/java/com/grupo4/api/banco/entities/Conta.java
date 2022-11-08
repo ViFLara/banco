@@ -29,4 +29,5 @@ public class Conta {
     //private Enum status;
 
     private List<Transacao> transacoes;
+
 }

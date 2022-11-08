@@ -1,6 +1,7 @@
 package com.grupo4.api.banco.entities;
 
 import lombok.*;
+import java.time.LocalDateTime;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -22,4 +23,5 @@ public class Transacao {
     private Conta contaOrigem;
 
     private Conta contaDestino;
+
 }

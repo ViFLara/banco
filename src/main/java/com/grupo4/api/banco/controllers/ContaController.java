@@ -33,6 +33,13 @@ public class ContaController {
     public void update(Conta conta) {
         service.update(conta); }
 
+    @PostMapping()
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation("Create Conta")
+    public Conta createConta(Conta conta) {
+        return service.createConta(conta);
+    }
+
     //post
     //get pelo id
     //get listar todas

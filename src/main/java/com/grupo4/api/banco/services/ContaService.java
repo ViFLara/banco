@@ -21,4 +21,8 @@ public class ContaService {
 
     public void update(Conta conta){
     }
+
+    public Conta createConta(Conta conta){
+        return new Conta();
+    }
 }

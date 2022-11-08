@@ -7,34 +7,33 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Getter
-@Setter
 @Builder
-@Entity
+//@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "cliente")
+//@Table(name = "cliente")
 public class Cliente {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
-    @Column(nullable = false, unique = true)
 
+    //@Column(nullable = false, unique = true)
     private String cpf;
 
     private String email;
 
     private String telefone;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    //@JsonFormat(pattern = "yyyy-MM-dd")
     private Date dataNascimento;
 
     private String profissao;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "endereco_id", referencedColumnName = "id")
     private Endereco endereco;
 
     private Conta conta;

@@ -5,16 +5,15 @@ import lombok.*;
 import javax.persistence.*;
 
 @Getter
-@Setter
 @Builder
-@Entity
+//@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "endereco")
+//@Table(name = "endereco")
 public class Endereco {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String rua;

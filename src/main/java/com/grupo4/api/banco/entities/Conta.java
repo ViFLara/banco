@@ -4,27 +4,29 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
-@Setter
 @Builder
-@Entity
+//@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "conta")
+//@Table(name = "conta")
 public class Conta {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Integer agencia;
 
     private Integer numeroConta;
 
-    private Cliente cliente;
+    //private Cliente cliente;
 
     private BigDecimal saldo;
 
+    //private Enum status;
 
+    private List<Transacao> transacoes;
 }

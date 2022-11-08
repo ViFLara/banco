@@ -6,16 +6,15 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Getter
-@Setter
 @Builder
-@Entity
+//@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "endereco")
-public class Transacoes {
+//@Table(name = "endereco")
+public class Transacao {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Id
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private BigDecimal valorTransferido;

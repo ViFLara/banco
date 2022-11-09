@@ -1,8 +1,10 @@
 package com.grupo4.api.banco.entities;
 
+import com.grupo4.api.banco.enums.StatusContaEnum;
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -26,8 +28,15 @@ public class Conta {
 
     private BigDecimal saldo;
 
-    //private Enum status;
+    @Enumerated(EnumType.STRING)
+    private StatusContaEnum statusConta;
 
-    private List<Transacao> transacoes;
+    //como diferenciar feitas e recebidas
+
+    //@OneToMany(mappedBy = "contaOrigem")
+    private List<Transacao> transferenciasFeitas;
+
+    //@OneToMany(mappedBy = "contaDestino")
+    private List<Transacao> transferenciasRecebidas;
 
 }

@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/clientes")
 public class ClienteController {
 
-    ClienteService service;
+    private ClienteService service;
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)

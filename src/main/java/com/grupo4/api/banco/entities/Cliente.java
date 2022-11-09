@@ -1,9 +1,10 @@
 package com.grupo4.api.banco.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import java.util.Date;
 
 @Getter

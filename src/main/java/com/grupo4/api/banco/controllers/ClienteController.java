@@ -55,8 +55,4 @@ public class ClienteController {
         service.deleteById(id);
     }
 
-    //get
-    //post
-    //put
-    //delete
 }

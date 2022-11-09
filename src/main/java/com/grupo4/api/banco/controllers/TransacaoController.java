@@ -13,6 +13,7 @@ import java.util.List;
 public class TransacaoController {
 
     private TransacaoService service;
+
     @PostMapping("/list")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create List Transações")
@@ -24,11 +25,7 @@ public class TransacaoController {
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation("Find all Transacoes")
     public List<Transacao> findAll() {
-
         return service.findAll();
     }
-
-    //post
-    //get
 
 }

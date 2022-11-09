@@ -1,6 +1,5 @@
 package com.grupo4.api.banco.controllers;
 
-import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.services.ContaService;
 import io.swagger.annotations.ApiOperation;
@@ -40,8 +39,4 @@ public class ContaController {
         return service.createConta(conta);
     }
 
-    //post
-    //get pelo id
-    //get listar todas
-    //put (status tivo e inativo)
 }

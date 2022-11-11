@@ -5,12 +5,15 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Embeddable;
+
 @Getter
 @Builder
 //@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 //@Table(name = "endereco")
+@Embeddable
 public class Endereco {
 
     //@Id

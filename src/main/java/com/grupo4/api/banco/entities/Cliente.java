@@ -1,13 +1,17 @@
 package com.grupo4.api.banco.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.*;
 
+import javax.persistence.Embedded;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
+@Setter
 @Builder
 //@Entity
 @NoArgsConstructor
@@ -15,8 +19,8 @@ import java.util.Date;
 //@Table(name = "cliente")
 public class Cliente {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
@@ -28,13 +32,14 @@ public class Cliente {
 
     private String telefone;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dataNascimento;
 
     private String profissao;
 
     //@OneToOne(cascade = CascadeType.ALL)
     //@JoinColumn(name = "endereco_id", referencedColumnName = "id")
+    @Embedded
     private Endereco endereco;
 
     private Conta conta;

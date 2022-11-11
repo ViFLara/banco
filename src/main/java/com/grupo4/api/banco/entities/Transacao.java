@@ -1,5 +1,6 @@
 package com.grupo4.api.banco.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.grupo4.api.banco.enums.TipoTransacaoEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -36,6 +38,7 @@ public class Transacao {
 
     //@Column(nullable = false, name = "created_at", updatable = false)
     @CreationTimestamp
-    private LocalDateTime dataCriacao;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataCriacao;
 
 }

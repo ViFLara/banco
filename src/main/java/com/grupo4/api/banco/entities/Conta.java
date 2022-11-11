@@ -3,12 +3,12 @@ package com.grupo4.api.banco.entities;
 import com.grupo4.api.banco.enums.StatusContaEnum;
 import lombok.*;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
+@Setter
 @Builder
 //@Entity
 @NoArgsConstructor
@@ -16,8 +16,8 @@ import java.util.List;
 //@Table(name = "conta")
 public class Conta {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Integer agencia;

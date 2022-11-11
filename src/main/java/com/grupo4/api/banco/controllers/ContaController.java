@@ -13,6 +13,7 @@ import java.util.List;
 public class ContaController {
 
     private ContaService service;
+
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Conta findById(Long id) {
@@ -32,7 +33,7 @@ public class ContaController {
     public void update(Conta conta) {
         service.update(conta); }
 
-    @PostMapping()
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Conta")
     public Conta createConta(Conta conta) {

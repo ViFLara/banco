@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.grupo4.api.banco.enums.TipoTransacaoEnum;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,10 +12,10 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Builder
-//@Entity
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "endereco")
+@Table(name = "transacao")
 public class Transacao {
 
     @Id

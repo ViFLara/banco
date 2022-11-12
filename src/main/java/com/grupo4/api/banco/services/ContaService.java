@@ -19,12 +19,12 @@ public class ContaService {
     @Transactional(readOnly = true)
     public Optional<Conta> findById(Long id) {
         return contaRepository.findById(id);
-    }
+    } //feito
 
     @Transactional(readOnly = true)
     public List<Conta> findAll() { //feito
         return contaRepository.findAll();
-    }
+    } //feito
 
     public void update(Conta conta){
         contaRepository.save(conta); //feito

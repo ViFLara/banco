@@ -26,17 +26,15 @@ public class ClienteController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation("Find all Clientes")
-    public List<Cliente> findAll() {
+    public List<Cliente> findAll() { // feito
         return service.findAll();
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ApiOperation("Update Cliente")
-    public void update(@RequestBody Cliente cliente) {
-        cliente.setCpf("12345678901");
-        cliente.setNome("Ana");
-        //service.update(cliente);
+    public void update(@RequestBody Cliente cliente) { // feito
+        service.update(cliente);
     }
 
     @PostMapping

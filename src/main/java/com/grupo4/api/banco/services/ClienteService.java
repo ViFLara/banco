@@ -22,18 +22,19 @@ public class ClienteService {
 
 
     //@Transactional(readOnly = true)
-    public List<Cliente> findAll() {
-        return null;
+    public List<Cliente> findAll() { //feito
+        return clienteRepository.findAll();
     }
 
-    public void update(Cliente cliente){
+    public void update(Cliente cliente){ // feito
+        clienteRepository.save(cliente);
     }
 
-    public void createClienteList(List<Cliente> clientes){
+    public void createClienteList(List<Cliente> clientes){ // feito
         clienteRepository.saveAll(clientes); //feito
 
     }
-    public Cliente createCliente(Cliente cliente){
+    public Cliente createCliente(Cliente cliente){ //feito
         return  clienteRepository.save(cliente);
     }//feito
 

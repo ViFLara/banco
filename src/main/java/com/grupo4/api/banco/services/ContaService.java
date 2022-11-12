@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ContaService {
@@ -16,8 +17,8 @@ public class ContaService {
     private ContaRepository contaRepository;
 
     @Transactional(readOnly = true)
-    public Conta findById(Long id) {
-        return new Conta();
+    public Optional<Conta> findById(Long id) {
+        return contaRepository.findById(id);
     }
 
     @Transactional(readOnly = true)
@@ -26,6 +27,7 @@ public class ContaService {
     }
 
     public void update(Conta conta){
+        contaRepository.save(conta); //feito
     }
 
     public Conta createConta(Conta conta){

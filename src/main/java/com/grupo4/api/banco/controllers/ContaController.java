@@ -1,6 +1,5 @@
 package com.grupo4.api.banco.controllers;
 
-import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.services.ContaService;
 import io.swagger.annotations.ApiOperation;
@@ -9,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/contas")
@@ -19,8 +19,8 @@ public class ContaController {
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Conta findById(Long id) {
-        return service.findById(id);
+    public Optional<Conta> findById(@PathVariable Long id) {
+        return service.findById(id); //feito
     }
 
     @GetMapping
@@ -33,14 +33,14 @@ public class ContaController {
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ApiOperation("Update Conta")
-    public void update(Conta conta) {
+    public void update(@RequestBody Conta conta) {
         service.update(conta);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Conta")
-    public Conta createConta(Conta conta) {
+    public Conta createConta(@RequestBody Conta conta) {
         return service.createConta(conta);
     }
 

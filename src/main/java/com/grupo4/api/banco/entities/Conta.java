@@ -1,19 +1,19 @@
 package com.grupo4.api.banco.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.StatusContaEnum;
 import lombok.*;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.List;
 
 @Getter
 @Setter
 @Builder
-//@Entity
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-//@Table(name = "conta")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Table(name = "conta")
 public class Conta {
 
     @Id
@@ -34,9 +34,9 @@ public class Conta {
     //como diferenciar feitas e recebidas
 
     //@OneToMany(mappedBy = "contaOrigem")
-    private List<Transacao> transferenciasFeitas;
+    //private List<Transacao> transferenciasFeitas;
 
     //@OneToMany(mappedBy = "contaDestino")
-    private List<Transacao> transferenciasRecebidas;
+    //private List<Transacao> transferenciasRecebidas;
 
 }

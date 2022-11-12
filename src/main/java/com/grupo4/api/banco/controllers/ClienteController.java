@@ -40,7 +40,7 @@ public class ClienteController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("New Cliente")
-    public Cliente createCliente(@RequestBody Cliente cliente) {
+    public Cliente createCliente(@RequestBody Cliente cliente) { //feito
         return service.createCliente(cliente);
     }
 

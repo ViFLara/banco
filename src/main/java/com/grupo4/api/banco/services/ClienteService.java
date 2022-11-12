@@ -4,6 +4,7 @@ import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,14 +15,12 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    //@Transactional(readOnly = true)
+    @Transactional(readOnly = true)
     public Optional<Cliente> findById(Long id) {
         return clienteRepository.findById(id);
     }//feito
 
-
-
-    //@Transactional(readOnly = true)
+    @Transactional(readOnly = true)
     public List<Cliente> findAll() { //feito
         return clienteRepository.findAll();
     }
@@ -32,8 +31,8 @@ public class ClienteService {
 
     public void createClienteList(List<Cliente> clientes){ // feito
         clienteRepository.saveAll(clientes); //feito
-
     }
+
     public Cliente createCliente(Cliente cliente){ //feito
         return  clienteRepository.save(cliente);
     }//feito

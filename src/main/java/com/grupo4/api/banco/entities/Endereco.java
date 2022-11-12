@@ -1,23 +1,22 @@
 package com.grupo4.api.banco.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 
 @Getter
+@Setter
 @Builder
 //@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-//@Table(name = "endereco")
+@Table(name = "endereco")
 //@Embeddable
 public class Endereco {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String rua;
@@ -30,5 +29,5 @@ public class Endereco {
 
     private String bairro;
 
-    private Cliente cliente;
+    //private Cliente cliente;
 }

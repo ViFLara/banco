@@ -19,6 +19,7 @@ public class TransacaoService {
     }
 
     public List<Transacao> findAll() {
-        return null;
+
+        return transacaoRepository.findAll(); // feito
     }
 }

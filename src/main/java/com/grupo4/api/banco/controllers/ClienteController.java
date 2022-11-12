@@ -44,7 +44,6 @@ public class ClienteController {
         return service.createCliente(cliente);
     }
 
-
     @PostMapping("/list")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Cliente")

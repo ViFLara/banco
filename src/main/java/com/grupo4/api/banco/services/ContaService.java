@@ -1,7 +1,9 @@
 package com.grupo4.api.banco.services;
 
+import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.entities.Conta;
-import org.springframework.stereotype.Component;
+import com.grupo4.api.banco.repositories.ContaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,20 +12,27 @@ import java.util.List;
 @Service
 public class ContaService {
 
+    @Autowired
+    private ContaRepository contaRepository;
+
     @Transactional(readOnly = true)
     public Conta findById(Long id) {
         return new Conta();
     }
 
     @Transactional(readOnly = true)
-    public List<Conta> findAll() {
-        return null;
+    public List<Conta> findAll() { //feito
+        return contaRepository.findAll();
     }
 
     public void update(Conta conta){
     }
 
     public Conta createConta(Conta conta){
-        return new Conta();
+        return contaRepository.save(conta); //feito
+    }
+
+    public void createContaList(List<Conta> contas) {
+        contaRepository.saveAll(contas); //feito
     }
 }

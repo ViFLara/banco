@@ -1,8 +1,10 @@
 package com.grupo4.api.banco.controllers;
 
+import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.services.ContaService;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,7 @@ import java.util.List;
 @RequestMapping("/contas")
 public class ContaController {
 
+    @Autowired
     private ContaService service;
 
     @GetMapping(value = "/{id}")
@@ -25,13 +28,14 @@ public class ContaController {
     @ApiOperation("Find all Contas")
     public List<Conta> findAll() {
         return service.findAll();
-    }
+    } //feito
 
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ApiOperation("Update Conta")
     public void update(Conta conta) {
-        service.update(conta); }
+        service.update(conta);
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -40,4 +44,10 @@ public class ContaController {
         return service.createConta(conta);
     }
 
+    @PostMapping("/list")
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation("Conta")
+    public void createContaList(@RequestBody List<Conta> contas) {
+        service.createContaList(contas); //feito
+    }
 }

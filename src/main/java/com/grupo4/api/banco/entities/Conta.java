@@ -20,9 +20,9 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer agencia;
+    private String agencia;
 
-    private Integer numeroConta;
+    private String numeroConta;
 
     //private Cliente cliente;
 

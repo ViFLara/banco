@@ -3,17 +3,14 @@ package com.grupo4.api.banco.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
-import javax.persistence.Embedded;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
 @Setter
 @Builder
-//@Entity
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 //@Table(name = "cliente")
@@ -42,6 +39,6 @@ public class Cliente {
     @Embedded
     private Endereco endereco;
 
-    private Conta conta;
+    //private Conta conta;
 
 }

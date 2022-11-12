@@ -1,12 +1,18 @@
 package com.grupo4.api.banco.services;
 
 import com.grupo4.api.banco.entities.Cliente;
+import com.grupo4.api.banco.repositories.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class ClienteService {
+
+    @Autowired
+    private ClienteRepository clienteRepository;
 
     //@Transactional(readOnly = true)
     public Cliente findById(Long id) {
@@ -25,6 +31,7 @@ public class ClienteService {
 
     }
     public Cliente createCliente(Cliente cliente){
+        clienteRepository.save(cliente);
         return cliente;
     }
      public void deleteById( Long id){

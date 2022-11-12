@@ -3,10 +3,10 @@ package com.grupo4.api.banco.services;
 import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteService {
@@ -15,9 +15,11 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     //@Transactional(readOnly = true)
-    public Cliente findById(Long id) {
-        return new Cliente();
+    public Optional<Cliente> findById(Long id) {
+        return clienteRepository.findById(id);
     }
+
+
 
     //@Transactional(readOnly = true)
     public List<Cliente> findAll() {
@@ -31,9 +33,9 @@ public class ClienteService {
 
     }
     public Cliente createCliente(Cliente cliente){
-        clienteRepository.save(cliente);
-        return cliente;
+        return  clienteRepository.save(cliente);
     }
+
      public void deleteById( Long id){
 
      }

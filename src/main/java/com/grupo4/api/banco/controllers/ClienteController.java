@@ -1,15 +1,14 @@
 package com.grupo4.api.banco.controllers;
 
 import com.grupo4.api.banco.entities.Cliente;
-import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.services.ClienteService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/clientes")
@@ -20,7 +19,7 @@ public class ClienteController {
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Cliente findById(@PathVariable Long id) {
+    public Optional<Cliente> findById(@PathVariable Long id) {
         return service.findById(id);
     }
 
@@ -46,6 +45,7 @@ public class ClienteController {
     public Cliente createCliente(@RequestBody Cliente cliente) {
         return service.createCliente(cliente);
     }
+
 
     @PostMapping("/list")
     @ResponseStatus(HttpStatus.CREATED)

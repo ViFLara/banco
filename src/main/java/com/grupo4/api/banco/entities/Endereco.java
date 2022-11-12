@@ -13,7 +13,7 @@ import javax.persistence.Embeddable;
 @NoArgsConstructor
 @AllArgsConstructor
 //@Table(name = "endereco")
-@Embeddable
+//@Embeddable
 public class Endereco {
 
     //@Id

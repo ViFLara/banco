@@ -36,8 +36,8 @@ public class Cliente {
 
     //@OneToOne(cascade = CascadeType.ALL)
     //@JoinColumn(name = "endereco_id", referencedColumnName = "id")
-    @Embedded
-    private Endereco endereco;
+//    @Embedded
+//    private Endereco endereco;
 
     //private Conta conta;
 

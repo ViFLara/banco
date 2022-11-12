@@ -17,7 +17,7 @@ public class ClienteService {
     //@Transactional(readOnly = true)
     public Optional<Cliente> findById(Long id) {
         return clienteRepository.findById(id);
-    }
+    }//feito
 
 
 
@@ -30,13 +30,14 @@ public class ClienteService {
     }
 
     public void createClienteList(List<Cliente> clientes){
+        clienteRepository.saveAll(clientes); //feito
 
     }
     public Cliente createCliente(Cliente cliente){
         return  clienteRepository.save(cliente);
-    }
+    }//feito
 
      public void deleteById( Long id){
-
+        clienteRepository.deleteById(id); //feito
      }
 }

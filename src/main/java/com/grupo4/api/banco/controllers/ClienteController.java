@@ -49,16 +49,16 @@ public class ClienteController {
 
     @PostMapping("/list")
     @ResponseStatus(HttpStatus.CREATED)
-    @ApiOperation(" Cliente")
+    @ApiOperation("Cliente")
     public void createClienteList(@RequestBody List<Cliente> clientes) {
-        service.createClienteList(clientes);
+        service.createClienteList(clientes); //feito
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation("Delete Cliente")
-    public void deleteById (Long id) {
-        service.deleteById(id);
+    public void deleteById (@PathVariable Long id) {
+        service.deleteById(id); //feito
     }
 
 }

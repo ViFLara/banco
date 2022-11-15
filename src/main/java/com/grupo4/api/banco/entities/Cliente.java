@@ -6,6 +6,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -13,8 +14,8 @@ import java.time.LocalDate;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Table(name = "cliente")
 public class Cliente {
 
     @Id
@@ -35,11 +36,10 @@ public class Cliente {
 
     private String profissao;
 
-    //@OneToOne(cascade = CascadeType.ALL)
-    //@JoinColumn(name = "endereco_id", referencedColumnName = "id")
-//    @Embedded
-//    private Endereco endereco;
+    @OneToOne
+    private Endereco endereco;
 
-    //private Conta conta;
+    @OneToMany(mappedBy = "cliente")
+    private List<Conta> conta;
 
 }

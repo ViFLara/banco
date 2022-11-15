@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Table(name = "conta")
 public class Conta {
@@ -24,7 +25,9 @@ public class Conta {
 
     private String numeroConta;
 
-    //private Cliente cliente;
+    @ManyToOne
+    @JoinColumn(name="cliente_id")
+    private Cliente cliente;
 
     private BigDecimal saldo;
 

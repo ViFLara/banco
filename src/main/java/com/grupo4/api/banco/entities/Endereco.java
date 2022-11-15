@@ -1,18 +1,17 @@
 package com.grupo4.api.banco.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
-import org.springframework.data.annotation.Id;
-
 import javax.persistence.*;
 
 @Getter
 @Setter
 @Builder
-//@Entity
+@Entity
+@EqualsAndHashCode
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "endereco")
-//@Embeddable
 public class Endereco {
 
     @Id
@@ -29,5 +28,4 @@ public class Endereco {
 
     private String bairro;
 
-    //private Cliente cliente;
 }

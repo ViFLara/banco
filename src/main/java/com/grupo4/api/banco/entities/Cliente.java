@@ -36,7 +36,7 @@ public class Cliente {
 
     private String profissao;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Endereco endereco;
 
     @OneToMany(mappedBy = "cliente")

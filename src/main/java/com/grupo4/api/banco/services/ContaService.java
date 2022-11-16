@@ -1,7 +1,7 @@
 package com.grupo4.api.banco.services;
 
-import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.entities.Conta;
+import com.grupo4.api.banco.enums.TipoConta;
 import com.grupo4.api.banco.repositories.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,4 +37,8 @@ public class ContaService {
     public void createContaList(List<Conta> contas) {
         contaRepository.saveAll(contas); //feito
     }
+
+    /*public Conta findByAgenciaNumeroContaETipo(String agencia, String numeroConta, TipoConta tipoConta) {
+        return contaRepository.findByAgenciaNumeroContaETipo(agencia, numeroConta, tipoConta);
+    }*/
 }

@@ -33,7 +33,6 @@ public class Conta {
     @JsonIgnore
     private Cliente cliente;
 
-    @JsonIgnore
     private BigDecimal saldo;
 
     @Enumerated(EnumType.STRING)

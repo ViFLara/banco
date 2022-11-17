@@ -28,7 +28,9 @@ public class Transacao {
 
     private BigDecimal quantia;
 
-    //private Conta contaOrigem;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "contaOrigem")
+    private Conta contaOrigem;
 
     //private Conta contaDestino;
 

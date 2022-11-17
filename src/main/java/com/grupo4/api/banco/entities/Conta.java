@@ -1,8 +1,8 @@
 package com.grupo4.api.banco.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.StatusContaEnum;
-import com.grupo4.api.banco.enums.TipoConta;
 import lombok.*;
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -28,6 +28,7 @@ public class Conta {
     private String numeroConta;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name="cliente_id")
     private Cliente cliente;
 
@@ -42,9 +43,10 @@ public class Conta {
 
     //como diferenciar feitas e recebidas
 
-    //private List<Transacao> transferenciasRecebidas;
+    @OneToMany(mappedBy = "contaOrigem")
+    private List<Transacao> transferenciasFeitas;
 
-    //@OneToMany(mappedBy = "contaOrigem")
-    //private List<Transacao> transferenciasFeitas;
+    //@OneToMany(mappedBy = )
+    //private List<Transacao> transferenciasRecebidas;
 
 }

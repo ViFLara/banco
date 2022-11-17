@@ -1,6 +1,7 @@
 package com.grupo4.api.banco.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
@@ -40,6 +41,7 @@ public class Cliente {
     private Endereco endereco;
 
     @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
     private List<Conta> conta;
 
 }

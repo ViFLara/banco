@@ -1,5 +1,6 @@
 package com.grupo4.api.banco.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.StatusContaEnum;
 import com.grupo4.api.banco.enums.TipoConta;
@@ -29,8 +30,10 @@ public class Conta {
 
     @ManyToOne
     @JoinColumn(name="cliente_id")
+    @JsonIgnore
     private Cliente cliente;
 
+    @JsonIgnore
     private BigDecimal saldo;
 
     @Enumerated(EnumType.STRING)
@@ -44,7 +47,7 @@ public class Conta {
 
     //private List<Transacao> transferenciasRecebidas;
 
-    //@OneToMany(mappedBy = "contaOrigem")
-    //private List<Transacao> transferenciasFeitas;
+    @OneToMany(mappedBy = "contaOrigem")
+    private List<Transacao> transferenciasFeitas;
 
 }

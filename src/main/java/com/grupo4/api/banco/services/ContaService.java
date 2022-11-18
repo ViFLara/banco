@@ -38,7 +38,7 @@ public class ContaService {
         contaRepository.saveAll(contas); //feito
     }
 
-    /*public Conta findByAgenciaNumeroContaETipo(String agencia, String numeroConta, TipoConta tipoConta) {
-        return contaRepository.findByAgenciaNumeroContaETipo(agencia, numeroConta, tipoConta);
-    }*/
+    public Conta findByAgenciaNumeroContaETipo(String agencia, String numeroConta, TipoConta tipoConta) {
+        return contaRepository.findByAgenciaAndNumeroContaAndTipoConta(agencia, numeroConta, tipoConta);
+    }
 }

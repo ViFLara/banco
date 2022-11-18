@@ -11,7 +11,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -35,16 +34,15 @@ public class Conta {
 
     private BigDecimal saldo;
 
-    @Enumerated(EnumType.STRING)
     private StatusContaEnum statusConta;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoConta tipoConta;
 
     //como diferenciar feitas e recebidas
-
-    //private List<Transacao> transferenciasRecebidas;
+    @OneToMany(mappedBy = "contaDestino")
+    @JsonIgnore
+    private List<Transacao> transferenciasRecebidas;
 
     @OneToMany(mappedBy = "contaOrigem")
     @JsonIgnore

@@ -67,6 +67,12 @@
 			<version>5.9.0</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- MAPSTRUCT MAPPER -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.5.2.Final</version>
+		</dependency>
 		<!-- SWAGGER -->
 		<dependency>
 			<groupId>io.springfox</groupId>

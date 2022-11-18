@@ -28,7 +28,9 @@ public class Transacao {
     @JoinColumn(name = "contaOrigem")
     private Conta contaOrigem;
 
-    //private Conta contaDestino;
+    @ManyToOne
+    @JoinColumn(name = "contaDestino")
+    private Conta contaDestino;
 
     //@Column(nullable = false)
     @Enumerated(EnumType.STRING)

@@ -26,12 +26,12 @@ public class TransacaoService {
         return transacaoRepository.findAll(); // feito
     }
 
-  /*  public Transacao deposito(Transacao transacao) {
+    public Transacao deposito(Transacao transacao) {
         Transacao transacaoSalva = transacaoRepository.save(transacao);
         Conta contaDestino = transacao.getContaDestino();
         contaDestino.setSaldo(contaDestino.getSaldo().add(transacao.getQuantia()));
         transacaoSalva.setContaDestino(contaRepository.save(contaDestino));
         return transacaoSalva;
-    }*/
+    }
 
 }

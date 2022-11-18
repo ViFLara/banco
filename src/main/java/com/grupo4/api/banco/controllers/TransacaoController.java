@@ -1,7 +1,8 @@
 package com.grupo4.api.banco.controllers;
 
-import com.grupo4.api.banco.entities.Conta;
+import com.grupo4.api.banco.controllers.dto.TransacaoDTO;
 import com.grupo4.api.banco.entities.Transacao;
+import com.grupo4.api.banco.converter.TransacaoConverter;
 import com.grupo4.api.banco.services.ContaService;
 import com.grupo4.api.banco.services.TransacaoService;
 import io.swagger.annotations.ApiOperation;
@@ -18,11 +19,11 @@ public class TransacaoController {
     @Autowired
     private TransacaoService service;
 
-//    @Autowired
-//    private ContaService contaService;
+    @Autowired
+    private ContaService contaService;
 
-//    @Autowired
-//    private Transacao transacao;
+    @Autowired
+    private TransacaoConverter transacaoConverter;
 
     @PostMapping("/list")
     @ResponseStatus(HttpStatus.CREATED)
@@ -38,16 +39,16 @@ public class TransacaoController {
         return service.findAll();
     } // feito
 
-/*    @PostMapping("/deposito")
+    @PostMapping("/deposito")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Depósitos")
-    public Transacao deposito(@RequestBody Conta conta, Transacao transacao) {
-        transacao.setContaDestino(contaService
-                .findByAgenciaNumeroContaETipo(
-                        conta.getAgencia(),
-                        conta.getNumeroConta(),
-                        conta.getTipoConta()));
+    public Transacao deposito(@RequestBody TransacaoDTO transacaoDTO) {
+        Transacao transacao = transacaoConverter.toModel(transacaoDTO);
+        transacao.setContaDestino(contaService.findByAgenciaNumeroContaETipo(
+                transacaoDTO.getAgencia(),
+                transacaoDTO.getNumeroConta(),
+                transacaoDTO.getTipoConta()));
         return service.deposito(transacao);
-    }*/
+    }
 
 }

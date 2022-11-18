@@ -1,5 +1,7 @@
 package com.grupo4.api.banco.controllers;
 
+import com.grupo4.api.banco.controllers.dto.ContaDTO;
+import com.grupo4.api.banco.converter.ContaConverter;
 import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.services.ContaService;
 import io.swagger.annotations.ApiOperation;
@@ -16,6 +18,9 @@ public class ContaController {
 
     @Autowired
     private ContaService service;
+
+    @Autowired
+    private ContaConverter contaConverter;
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -40,7 +45,8 @@ public class ContaController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Conta")
-    public Conta createConta(@RequestBody Conta conta) {
+    public Conta createConta(@RequestBody ContaDTO contaDTO) {
+        Conta conta = contaConverter.toModel(contaDTO);
         return service.createConta(conta);
     }
 

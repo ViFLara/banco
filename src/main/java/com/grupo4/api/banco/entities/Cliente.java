@@ -24,7 +24,6 @@ public class Cliente {
 
     private String nome;
 
-    //@Column(nullable = false, unique = true)
     private String cpf;
 
     private String email;

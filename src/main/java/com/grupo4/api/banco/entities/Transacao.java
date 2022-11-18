@@ -32,7 +32,6 @@ public class Transacao {
     @JoinColumn(name = "contaDestino")
     private Conta contaDestino;
 
-    //@Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private TipoTransacaoEnum tipoTransacao;
 

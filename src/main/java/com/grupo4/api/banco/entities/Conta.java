@@ -34,9 +34,10 @@ public class Conta {
 
     private BigDecimal saldo;
 
+    @Enumerated(EnumType.STRING)
     private StatusContaEnum statusConta;
 
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private TipoConta tipoConta;
 
     //como diferenciar feitas e recebidas

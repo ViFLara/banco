@@ -6,6 +6,7 @@ import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.services.ContaService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,7 +39,7 @@ public class ContaController {
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ApiOperation("Update Conta")
-    public void update(@RequestBody Conta conta) {
+    public void update(@RequestBody Conta conta) throws ChangeSetPersister.NotFoundException{
         service.update(conta);
     }
 

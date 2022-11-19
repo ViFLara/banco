@@ -42,15 +42,18 @@ public class TransacaoController {
     @PostMapping("/deposito")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Depósitos")
-    public Transacao deposito(@RequestBody TransacaoDTO transacaoDTO) {
+    public Transacao deposit(@RequestBody TransacaoDTO transacaoDTO) {
         Transacao transacao = transacaoConverter.toModel(transacaoDTO);
         transacao.setContaDestino(contaService.findByAgenciaNumeroContaETipo(
                 transacaoDTO.getAgencia(),
                 transacaoDTO.getNumeroConta(),
                 transacaoDTO.getTipoConta()));
-        return service.deposito(transacao);
+        return service.deposit(transacao);
     }
+
     @PostMapping("/transfer/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation("Create Transacoes")
     public Transacao transfer(@PathVariable Long id, @RequestBody TransacaoDTO transacaoDTO) {
         Transacao transacao = transacaoConverter.toModel(transacaoDTO);
         transacao.setContaOrigem(contaService.findById(id).get());
@@ -60,6 +63,7 @@ public class TransacaoController {
                         transacaoDTO.getNumeroConta(),
                         transacaoDTO.getTipoConta()));
 
-        return transacaoService.transfer(transacao))
+        return service.transfer(transacao);
+
     }
 }

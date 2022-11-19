@@ -27,7 +27,7 @@ public class TransacaoService {
         return transacaoRepository.findAll(); // feito
     }
 
-    public Transacao deposito(Transacao transacao) {
+    public Transacao deposit(Transacao transacao) {
         Transacao transacaoSalva = transacaoRepository.save(transacao);
         Conta contaDestino = transacao.getContaDestino();
         contaDestino.setSaldo(contaDestino.getSaldo().add(transacao.getQuantia()));

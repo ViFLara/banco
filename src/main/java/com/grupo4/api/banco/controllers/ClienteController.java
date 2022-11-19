@@ -4,6 +4,7 @@ import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.services.ClienteService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +34,7 @@ public class ClienteController {
     @PutMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
     @ApiOperation("Update Cliente")
-    public void update(@RequestBody Cliente cliente) { // feito
+    public void update(@RequestBody Cliente cliente) throws ChangeSetPersister.NotFoundException  { // feito
         service.update(cliente);
     }
 

@@ -50,5 +50,16 @@ public class TransacaoController {
                 transacaoDTO.getTipoConta()));
         return service.deposito(transacao);
     }
+    @PostMapping("/transfer/{id}")
+    public Transacao transfer(@PathVariable Long id, @RequestBody TransacaoDTO transacaoDTO) {
+        Transacao transacao = transacaoConverter.toModel(transacaoDTO);
+        transacao.setContaOrigem(contaService.findById(id).get());
+        transacao.setContaDestino(contaService
+                .findByAgenciaNumeroContaETipo(
+                        transacaoDTO.getAgencia(),
+                        transacaoDTO.getNumeroConta(),
+                        transacaoDTO.getTipoConta()));
 
+        return transacaoService.transfer(transacao))
+    }
 }

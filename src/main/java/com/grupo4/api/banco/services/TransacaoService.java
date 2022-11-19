@@ -2,6 +2,7 @@ package com.grupo4.api.banco.services;
 
 import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.entities.Transacao;
+import com.grupo4.api.banco.enums.StatusContaEnum;
 import com.grupo4.api.banco.repositories.ContaRepository;
 import com.grupo4.api.banco.repositories.TransacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,32 @@ public class TransacaoService {
         contaDestino.setSaldo(contaDestino.getSaldo().add(transacao.getQuantia()));
         transacaoSalva.setContaDestino(contaRepository.save(contaDestino));
         return transacaoSalva;
+    }
+
+    public Transacao transfer(Transacao transacao) {
+
+        Conta contaOrigem = transacao.getContaOrigem();
+        Conta contaDestino = transacao.getContaDestino();
+
+        if (contaOrigem.getSaldo().compareTo(transacao.getQuantia()) <= 0) {
+            return null;
+//            throw new InvalidInputException("the origin " + contaOrigem.getTipoConta() + " account " +
+//                    contaOrigem.getNumeroConta() + " does not have enough balance");
+        }
+
+        if (!contaDestino.getStatusConta().equals(StatusContaEnum.A)) {
+            return null;
+//            throw new InvalidInputException("the destination " + contaDestino.getTipoConta() + " account " +
+//                    contaDestino.getNumeroConta() + " is not active");
+        }
+
+        Transacao transactionSalva = transacaoRepository.save(transacao);
+        contaOrigem.setSaldo(contaOrigem.getSaldo().subtract(transacao.getQuantia()));
+        contaDestino.setSaldo(contaDestino.getSaldo().add(transacao.getQuantia()));
+        transactionSalva.setContaOrigem(contaRepository.save(contaOrigem));
+        transactionSalva.setContaDestino(contaRepository.save(contaDestino));
+
+        return transactionSalva;
     }
 
 }

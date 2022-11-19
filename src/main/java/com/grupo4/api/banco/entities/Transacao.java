@@ -4,12 +4,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.TipoTransacaoEnum;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
+@Setter
 @Builder
 @Entity
 @EqualsAndHashCode
@@ -25,20 +25,18 @@ public class Transacao {
     private BigDecimal quantia;
 
     @ManyToOne
-    @Setter
     @JoinColumn(name = "contaOrigem")
     private Conta contaOrigem;
 
     @ManyToOne
-    @Setter
     @JoinColumn(name = "contaDestino")
     private Conta contaDestino;
 
     @Enumerated(EnumType.STRING)
     private TipoTransacaoEnum tipoTransacao;
 
-    @Column(nullable = false, name = "created_at", updatable = false)
-    @CreationTimestamp
+    //@Column(nullable = false, name = "created_at", updatable = false)
+    //@CreationTimestamp
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCriacao;
 

@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Getter
+@Setter
 @Builder
 @Entity
 @NoArgsConstructor
@@ -32,7 +33,6 @@ public class Conta {
     @JsonIgnore
     private Cliente cliente;
 
-    @Setter
     private BigDecimal saldo;
 
     @Enumerated(EnumType.STRING)

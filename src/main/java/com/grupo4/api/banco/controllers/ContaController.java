@@ -10,6 +10,7 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,8 +26,7 @@ public class ContaController {
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Conta> findById(@PathVariable Long id) {
-        return service.findById(id); //feito
+    public Optional<Conta> findById(@PathVariable Long id) throws ChangeSetPersister.NotFoundException {return service.findById(id); //feito
     }
 
     @GetMapping
@@ -46,7 +46,7 @@ public class ContaController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Conta")
-    public Conta createConta(@RequestBody ContaDTO contaDTO) {
+    public Conta createConta(@Valid @RequestBody ContaDTO contaDTO) throws ChangeSetPersister.NotFoundException {
         Conta conta = contaConverter.toModel(contaDTO);
         return service.createConta(conta);
     }

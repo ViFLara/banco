@@ -6,6 +6,10 @@ import com.grupo4.api.banco.enums.StatusContaEnum;
 import com.grupo4.api.banco.enums.TipoConta;
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -24,6 +28,8 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(max = 4, message = "Agência deve conter 4 carecteres")
+    @NotBlank(message = "O número da agência não pode estar em branco")
     private String agencia;
 
     private String numeroConta;
@@ -38,6 +44,7 @@ public class Conta {
     @Enumerated(EnumType.STRING)
     private StatusContaEnum statusConta;
 
+    @NotNull(message = "Tipo de conta não deve ser nula")
     @Enumerated(EnumType.STRING)
     private TipoConta tipoConta;
 

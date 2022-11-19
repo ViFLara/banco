@@ -7,6 +7,7 @@ import com.grupo4.api.banco.services.ContaService;
 import com.grupo4.api.banco.services.TransacaoService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,7 +55,7 @@ public class TransacaoController {
     @PostMapping("/transfer/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create Transacoes")
-    public Transacao transfer(@PathVariable Long id, @RequestBody TransacaoDTO transacaoDTO) {
+    public Transacao transfer(@PathVariable Long id, @RequestBody TransacaoDTO transacaoDTO) throws ChangeSetPersister.NotFoundException {
         Transacao transacao = transacaoConverter.toModel(transacaoDTO);
         transacao.setContaOrigem(contaService.findById(id).get());
         transacao.setContaDestino(contaService

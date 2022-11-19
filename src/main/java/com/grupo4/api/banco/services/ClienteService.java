@@ -3,6 +3,7 @@ package com.grupo4.api.banco.services;
 import com.grupo4.api.banco.entities.Cliente;
 import com.grupo4.api.banco.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,9 +17,7 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     @Transactional(readOnly = true)
-    public Optional<Cliente> findById(Long id) {
-        return clienteRepository.findById(id);
-    }//feito
+    public Optional<Cliente> findById(Long id) throws ChangeSetPersister.NotFoundException {verifyIfExists(id); return clienteRepository.findById(id);}//feito
 
     @Transactional(readOnly = true)
     public List<Cliente> findAll() { //feito
@@ -37,7 +36,13 @@ public class ClienteService {
         return  clienteRepository.save(cliente);
     }//feito
 
-     public void deleteById( Long id){
+     public void deleteById( Long id) throws ChangeSetPersister.NotFoundException {
+         verifyIfExists(id);
         clienteRepository.deleteById(id); //feito
      }
+
+    private void verifyIfExists(Long id) throws ChangeSetPersister.NotFoundException {
+        clienteRepository.findById(id)
+                .orElseThrow(ChangeSetPersister.NotFoundException::new);
+    }
 }

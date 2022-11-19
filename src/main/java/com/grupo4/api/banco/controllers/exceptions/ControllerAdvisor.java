@@ -1,5 +1,6 @@
 package com.grupo4.api.banco.controllers.exceptions;
 
+import com.grupo4.api.banco.services.exceptions.InvalidInputException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -21,6 +22,15 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class ControllerAdvisor {
+
+    @ExceptionHandler(value = {InvalidInputException.class})
+    public ResponseEntity<Object> handleInvalidInputException(InvalidInputException exception) {
+        Map<String, Object> body = new LinkedHashMap<>();
+        body.put("errorCode","BAD_REQUEST");
+        body.put("errorMessage", exception.getMessage());
+        body.put("timestamp", LocalDateTime.now());
+        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
+    }
 
     @ExceptionHandler(ChangeSetPersister.NotFoundException.class)
     public ResponseEntity<Object> handleNotFoundException(ChangeSetPersister.NotFoundException ex, WebRequest request)

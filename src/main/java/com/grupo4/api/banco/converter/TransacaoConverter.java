@@ -12,7 +12,7 @@ public class TransacaoConverter {
     public Transacao toModel(TransacaoDTO transacaoDTO) {
         return Transacao.builder()
                 .quantia(transacaoDTO.getQuantia())
-                .tipoTransacao(TipoTransacaoEnum.DEPOSITO)
+                .tipoTransacao(transacaoDTO.getTipoTransacao())
                 .build();
 
     }

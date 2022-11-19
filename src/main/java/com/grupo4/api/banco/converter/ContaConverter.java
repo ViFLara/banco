@@ -7,6 +7,7 @@ import com.grupo4.api.banco.enums.StatusContaEnum;
 import com.grupo4.api.banco.services.ClienteService;
 import com.grupo4.api.banco.services.ContaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,7 +15,7 @@ public class ContaConverter {
 
     @Autowired
     private ClienteService clienteService;
-    public Conta toModel(ContaDTO contaDTO){
+    public Conta toModel(ContaDTO contaDTO) throws ChangeSetPersister.NotFoundException {
         return Conta.builder()
                 .agencia(contaDTO.getAgencia())
                 .numeroConta(contaDTO.getNumeroConta())

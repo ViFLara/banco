@@ -1,6 +1,7 @@
 package com.grupo4.api.banco.controllers.dto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.TipoConta;
+import com.grupo4.api.banco.enums.TipoTransacaoEnum;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -21,4 +22,6 @@ public class TransacaoDTO {
     private TipoConta tipoConta;
 
     private BigDecimal quantia;
+
+    private TipoTransacaoEnum tipoTransacao;
 }

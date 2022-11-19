@@ -4,6 +4,7 @@ import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.enums.TipoConta;
 import com.grupo4.api.banco.repositories.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,8 +18,7 @@ public class ContaService {
     private ContaRepository contaRepository;
 
     @Transactional(readOnly = true)
-    public Optional<Conta> findById(Long id) {
-        return contaRepository.findById(id);
+    public Optional<Conta> findById(Long id) throws ChangeSetPersister.NotFoundException { verifyIfExists(id); return contaRepository.findById(id);
     } //feito
 
     @Transactional(readOnly = true)
@@ -40,5 +40,10 @@ public class ContaService {
 
     public Conta findByAgenciaNumeroContaETipo(String agencia, String numeroConta, TipoConta tipoConta) {
         return contaRepository.findByAgenciaAndNumeroContaAndTipoConta(agencia, numeroConta, tipoConta);
+    }
+
+    private void verifyIfExists(Long id) throws ChangeSetPersister.NotFoundException {
+        contaRepository.findById(id)
+                .orElseThrow(ChangeSetPersister.NotFoundException::new);
     }
 }

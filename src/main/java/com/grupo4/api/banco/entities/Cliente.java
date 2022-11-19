@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -25,6 +27,8 @@ public class Cliente {
 
     private String nome;
 
+    @Size(max = 11, min = 11, message = "O CPF deve ter 11 caracteres")
+    @NotBlank
     private String cpf;
 
     private String email;

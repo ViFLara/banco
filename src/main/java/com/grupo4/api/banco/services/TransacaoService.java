@@ -5,7 +5,9 @@ import com.grupo4.api.banco.entities.Transacao;
 import com.grupo4.api.banco.enums.StatusContaEnum;
 import com.grupo4.api.banco.repositories.ContaRepository;
 import com.grupo4.api.banco.repositories.TransacaoRepository;
+import com.grupo4.api.banco.services.exceptions.InvalidInputException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -41,15 +43,13 @@ public class TransacaoService {
         Conta contaDestino = transacao.getContaDestino();
 
         if (contaOrigem.getSaldo().compareTo(transacao.getQuantia()) <= 0) {
-            return null;
-//            throw new InvalidInputException("the origin " + contaOrigem.getTipoConta() + " account " +
-//                    contaOrigem.getNumeroConta() + " does not have enough balance");
+            throw new InvalidInputException("A conta origem " + contaOrigem.getTipoConta() + " com numero " +
+                    contaOrigem.getNumeroConta() + " Não tem saldo suficiente");
         }
 
         if (!contaDestino.getStatusConta().equals(StatusContaEnum.A)) {
-            return null;
-//            throw new InvalidInputException("the destination " + contaDestino.getTipoConta() + " account " +
-//                    contaDestino.getNumeroConta() + " is not active");
+           throw new InvalidInputException("A conta destino " + contaDestino.getTipoConta() + " com numero " +
+                    contaDestino.getNumeroConta() + " Não está ativa");
         }
 
         Transacao transactionSalva = transacaoRepository.save(transacao);

@@ -8,6 +8,7 @@ import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +21,7 @@ public class ClienteController {
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Cliente> findById(@PathVariable Long id) {
+    public Optional<Cliente> findById(@PathVariable Long id) throws ChangeSetPersister.NotFoundException {
         return service.findById(id);
     }
 
@@ -41,7 +42,7 @@ public class ClienteController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("New Cliente")
-    public Cliente createCliente(@RequestBody Cliente cliente) { //feito
+    public Cliente createCliente(@Valid @RequestBody Cliente cliente) { //feito
         return service.createCliente(cliente);
     }
 
@@ -55,7 +56,7 @@ public class ClienteController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation("Delete Cliente")
-    public void deleteById (@PathVariable Long id) {
+    public void deleteById (@PathVariable Long id) throws ChangeSetPersister.NotFoundException {
         service.deleteById(id); //feito
     }
 

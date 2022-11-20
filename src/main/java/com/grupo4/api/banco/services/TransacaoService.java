@@ -6,27 +6,25 @@ import com.grupo4.api.banco.enums.StatusContaEnum;
 import com.grupo4.api.banco.repositories.ContaRepository;
 import com.grupo4.api.banco.repositories.TransacaoRepository;
 import com.grupo4.api.banco.services.exceptions.InvalidInputException;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class TransacaoService {
 
-    @Autowired
     private TransacaoRepository transacaoRepository;
-
-    @Autowired
     private ContaRepository contaRepository;
 
     public void createTransacaoList(List<Transacao> transacoes){
-        transacaoRepository.saveAll(transacoes); // feito
+        transacaoRepository.saveAll(transacoes);
     }
 
     public List<Transacao> findAll() {
-        return transacaoRepository.findAll(); // feito
+        return transacaoRepository.findAll();
     }
 
     public Transacao deposit(Transacao transacao) {
@@ -38,7 +36,6 @@ public class TransacaoService {
     }
 
     public Transacao transfer(Transacao transacao) {
-
         Conta contaOrigem = transacao.getContaOrigem();
         Conta contaDestino = transacao.getContaDestino();
 

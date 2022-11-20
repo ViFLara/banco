@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.TipoTransacaoEnum;
 import lombok.*;
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -22,6 +25,9 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @Positive(message = "A quantia deve ser positiva")
+    @DecimalMin(value = "0.01", message = "O valor deve ser maior do que 0.01")
     private BigDecimal quantia;
 
     @ManyToOne
@@ -35,8 +41,6 @@ public class Transacao {
     @Enumerated(EnumType.STRING)
     private TipoTransacaoEnum tipoTransacao;
 
-    //@Column(nullable = false, name = "created_at", updatable = false)
-    //@CreationTimestamp
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCriacao;
 

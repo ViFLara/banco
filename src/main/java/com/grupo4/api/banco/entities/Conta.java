@@ -5,7 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.StatusContaEnum;
 import com.grupo4.api.banco.enums.TipoConta;
 import lombok.*;
+import org.hibernate.validator.constraints.Currency;
+
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -28,7 +31,7 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(max = 4, message = "Agência deve conter 4 carecteres")
+    @Size(max = 4, min = 4, message = "Agência deve conter 4 carecteres")
     @NotBlank(message = "O número da agência não pode estar em branco")
     private String agencia;
 
@@ -48,7 +51,6 @@ public class Conta {
     @Enumerated(EnumType.STRING)
     private TipoConta tipoConta;
 
-    //como diferenciar feitas e recebidas
     @OneToMany(mappedBy = "contaDestino")
     @JsonIgnore
     private List<Transacao> transferenciasRecebidas;

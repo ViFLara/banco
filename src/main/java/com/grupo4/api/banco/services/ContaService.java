@@ -3,39 +3,39 @@ package com.grupo4.api.banco.services;
 import com.grupo4.api.banco.entities.Conta;
 import com.grupo4.api.banco.enums.TipoConta;
 import com.grupo4.api.banco.repositories.ContaRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ContaService {
 
-    @Autowired
     private ContaRepository contaRepository;
 
     @Transactional(readOnly = true)
     public Optional<Conta> findById(Long id) throws ChangeSetPersister.NotFoundException { verifyIfExists(id); return contaRepository.findById(id);
-    } //feito
+    }
 
     @Transactional(readOnly = true)
     public List<Conta> findAll() { //feito
         return contaRepository.findAll();
-    } //feito
+    }
 
     public void update(Conta conta){
-        contaRepository.save(conta); //feito
+        contaRepository.save(conta);
     }
 
     public Conta createConta(Conta conta){
-        return contaRepository.save(conta); //feito
+        return contaRepository.save(conta);
     }
 
     public void createContaList(List<Conta> contas) {
-        contaRepository.saveAll(contas); //feito
+        contaRepository.saveAll(contas);
     }
 
     public Conta findByAgenciaNumeroContaETipo(String agencia, String numeroConta, TipoConta tipoConta) {

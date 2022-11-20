@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.grupo4.api.banco.enums.TipoConta;
 import lombok.*;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -16,8 +17,8 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ContaDTO {
 
-    @Size(max = 4, message = "Agência deve conter 4 carecteres")
-    @NotNull(message = "O número da agência não pode ser nulo")
+    @Size(max = 4, min = 4, message = "Agência deve conter 4 carecteres")
+    @NotBlank(message = "Deve-se colocar o número da agência")
     private String agencia;
 
     private String numeroConta;

@@ -1,4 +1,3 @@
-# WomanBank - Gama Academy
 
 <p align="center">
       <a href="https://github.com/ViFLara/cravoecanela_backend/commits/dev">

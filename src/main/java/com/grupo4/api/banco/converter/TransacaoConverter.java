@@ -5,6 +5,8 @@ import com.grupo4.api.banco.entities.Transacao;
 import com.grupo4.api.banco.enums.TipoTransacaoEnum;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+
 
 @Component
 public class TransacaoConverter {
@@ -13,6 +15,7 @@ public class TransacaoConverter {
         return Transacao.builder()
                 .quantia(transacaoDTO.getQuantia())
                 .tipoTransacao(transacaoDTO.getTipoTransacao())
+                .dataCriacao(LocalDate.now())
                 .build();
 
     }

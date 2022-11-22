@@ -64,11 +64,11 @@
   
   :heavy_check_mark: GET - localhost:8080/clientes (listar clientes)
   
-  :heavy_check_mark: POST - localhost:8080/clientes (cadastrar)
+  :heavy_check_mark: POST - localhost:8080/clientes (cadastrar cliente)
   
   :heavy_check_mark: POST - localhost:8080/clientes/list (cadastrar lista de clientes)
   
-  :heavy_check_mark: PUT - localhost:8080/clientes (atualizar)
+  :heavy_check_mark: PUT - localhost:8080/clientes (atualizar cliente)
 
   :heavy_check_mark: DELETE - localhost:8080/{id} (deletar)
   
@@ -78,21 +78,23 @@
   
   :heavy_check_mark: GET - localhost:8080/contas (listar contas)
   
-  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/servicos (listar serviços)
+  :heavy_check_mark: POST - localhost:8080/contas (cadastrar conta)
+  
+  :heavy_check_mark: PUT - localhost:8080/contas (atualizar conta)
   
   ### Transações:
-   
-  :heavy_check_mark: POST - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes (criar transação)
   
-  :heavy_check_mark: PATCH - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?id={id}&status={status} (mudar status da transação)
+  :heavy_check_mark: GET - localhost:8080/transacoes (listar transações)
   
-  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/transacoes?clienteId={id} (listar transações de cliente)
+  :heavy_check_mark: POST - localhost:8080/transacoes/transfer/{id} (realiza transferência entre contas)
+  
+  :heavy_check_mark: POST - localhost:8080/transacoes/deposito (realiza depósito)
+  
+  
 
 
  ### Modelagem para criação do banco de dados
-
-# <h1 align="center"> ![tabela1](https://user-images.githubusercontent.com/82177551/193124764-73615a41-88a0-4eea-bd9a-69d762643c1b.png)</h1>
-# <h1 align="center">![tabela](https://user-images.githubusercontent.com/82177551/193124771-8fc3009d-b000-492d-8fb8-39291b150e53.png)</h1>
+# <h1 align="center"> <img width="715" alt="DiagramaWorkbanch" src="https://user-images.githubusercontent.com/32341930/203400183-d94ae3e8-fabc-4a3a-96a3-be827913985b.png"></h1>
 
  ### Pré-requisitos para o Backend
   Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:

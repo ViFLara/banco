@@ -24,15 +24,13 @@
   <p align="justify"> Esse sistema permite o cadastro de novos clientes, incluindo dados pessoais e dados para contato. O cliente pode ser atrelado a uma conta bancária com um valor inicial de saldo. Também é possível fazer transferências de um cliente para outro e o histórico de transações entre as contas fica registrado na base e pode ser exibido pelo sistema. </p>
  <p align="justify"> Aplicamos Metodologias Ágeis e utilizamos a ferramenta Trello para a criação do backlog e detalhamento das tarefas no formato Kanban, seguindo o padrão "to do, doing, done" e definição dos responsáveis.
   
-   Projeto desenvolvido durante o treinamento **#ElasTech** oferecida pela [Gama Academy em parceria com a PagBank PagSeguro](https://www.youtube.com/watch?v=SozRQEsWDS4).</p>
+   Este projeto desenvolvido durante o treinamento **#ElasTech** oferecido pela [Gama Academy em parceria com a PagBank PagSeguro](https://www.youtube.com/watch?v=SozRQEsWDS4).</p>
   
   ---
 
   
   ## ⚙️ Funcionalidades
     
-:heavy_check_mark: Login de usuários
-
 :heavy_check_mark: Cadastro de clientes
 
 :heavy_check_mark: Listagem de clientes
@@ -41,19 +39,17 @@
 
 :heavy_check_mark: Deletar clientes
 
-:heavy_check_mark: Listar Histórico de transações por cliente
+:heavy_check_mark: Cadastro de contas
+
+:heavy_check_mark: Atualização de contas
+
+:heavy_check_mark: Transferência de saldo entre as contas
+
+:heavy_check_mark: Realização de depoósito
+
+:heavy_check_mark: Listar Histórico de transações
   
   ---  
-  ## 🎨 Layout
-  
-  O layout da aplicação está disponível no Figma: 
-  <br>
-  <a href="https://www.figma.com/file/vmf2kgtoL704A2wbphT5mb/PerformAcao?node-id=0%3A1">
-    <img alt="Made by PerformAção" src="https://img.shields.io/badge/Acessar%20Layout-Figma-yellow">
-  </a>
-  
-  
-  ---
   
   ## 📝 Projeto
  
@@ -64,17 +60,23 @@
   ## Endpoints:
   ### Clientes:
   
-  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (obter cliente específico)
+  :heavy_check_mark: GET - localhost:8080/clientes/{id} (obter cliente específico)
   
-  :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (listar clientes)
+  :heavy_check_mark: GET - localhost:8080/clientes (listar clientes)
   
-  :heavy_check_mark: POST - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (cadastrar)
+  :heavy_check_mark: POST - localhost:8080/clientes (cadastrar)
   
-  :heavy_check_mark: PUT - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes (atualizar)
+  :heavy_check_mark: POST - localhost:8080/clientes/list (cadastrar lista de clientes)
+  
+  :heavy_check_mark: PUT - localhost:8080/clientes (atualizar)
 
-  :heavy_check_mark: DELETE - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/clientes/{id} (deletar)
+  :heavy_check_mark: DELETE - localhost:8080/{id} (deletar)
   
-  ### Serviços:
+  ### Contas:
+  
+  :heavy_check_mark: GET - localhost:8080/contas/{id} (obter conta específica)
+  
+  :heavy_check_mark: GET - localhost:8080/contas (listar contas)
   
   :heavy_check_mark: GET - https://fiq9i0dhe2.execute-api.us-east-1.amazonaws.com/servicos (listar serviços)
   

@@ -97,8 +97,8 @@
 # <h1 align="center"> <img width="715" alt="DiagramaWorkbanch" src="https://user-images.githubusercontent.com/32341930/203400183-d94ae3e8-fabc-4a3a-96a3-be827913985b.png"></h1>
 
  ### Pré-requisitos para o Backend
-  Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-  [Git](https://git-scm.com) e um ter um editor para trabalhar com o código como [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) 
+  <p> Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+  [Git](https://git-scm.com) e um ter um editor para trabalhar com o código como [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) </p>
  ---
  
 ## 🛠 Tecnologias
@@ -106,12 +106,11 @@
   As seguintes ferramentas foram usadas na construção do projeto:
   #### **Backend**
   
-<img src="https://img.shields.io/badge/Java 11-cd0000?style=for-the-badge&logo=java&logoColor=white"/>
+<img src="https://img.shields.io/badge/Java 17-cd0000?style=for-the-badge&logo=java&logoColor=white"/>
 <img src="https://img.shields.io/badge/Spring Boot-97d96b?style=for-the-badge&logo=Spring Boot&logoColor=white"/>
 <img src="https://img.shields.io/badge/apache_maven-AC2246?style=for-the-badge&logo=apachemaven&logoColor=white"/>
-<img src="https://img.shields.io/badge/Junit5-25A162?style=for-the-badge&logo=junit5&logoColor=white"/>
-<img src="https://img.shields.io/badge/AWS-ed7f40?style=for-the-badge&logo=amazon&logoColor=white"/>
-<img src="https://img.shields.io/badge/Jenkins-fbca75?style=for-the-badge&logo=jenkins&logoColor=white"/>
+<img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
+<img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=Swagger&logoColor=white"/>
 <img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white"/>
     
 ---  

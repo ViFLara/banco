@@ -56,14 +56,10 @@
   ---
   
   ## 📝 Projeto
-  
-  Este projeto é divido em dois repositórios:
- 1. Frontend - <a href="https://github.com/ViFLara/cravoecanela_backend">cravoecanela_frontend</a>       
- 2.  Backend - <a href="https://github.com/ViFLara/cravoecanela_backend">cravoecanela_backend</a>
  
  Os endpoints do Backend podem ser vistos pelo Swagger:
   
-  link : http://ec2-174-129-49-15.compute-1.amazonaws.com:8081/swagger-ui.html 
+  link : http://localhost:8080/swagger-ui.html
   
   ## Endpoints:
   ### Clientes:

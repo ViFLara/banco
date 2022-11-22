@@ -96,9 +96,10 @@
  ### Modelagem para criação do banco de dados
 # <h1 align="center"> <img width="715" alt="DiagramaWorkbanch" src="https://user-images.githubusercontent.com/32341930/203400183-d94ae3e8-fabc-4a3a-96a3-be827913985b.png"></h1>
 
- ### Pré-requisitos para o Backend
+ ### Pré-requisitos
   <p> Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
   [Git](https://git-scm.com) e um ter um editor para trabalhar com o código como [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) </p>
+ 
  ---
  
 ## 🛠 Tecnologias
@@ -116,14 +117,6 @@
 ---  
 ## 👨‍💻 Contribuidores 
 
-Backend
 
-| [<img src="https://avatars.githubusercontent.com/u/46038257?v=4" width=115><br><sub>Viviane Ferreira Lara</sub>](https://github.com/ViFLara)| [<img src="https://avatars.githubusercontent.com/u/89219239?v=4" width=115><br><sub>Priscila Tuppy</sub>](https://github.com/PriscilaTuppy) |  
-| :---: | :---: |
-  
-Frontend
-
-| [<img src="https://avatars.githubusercontent.com/u/82177551?s=96&v=4" width=115><br><sub>Lais Manieri</sub>](https://github.com/laismanieri) |  [<img src="https://avatars.githubusercontent.com/u/60903424?v=4" width=115><br><sub>Nara Gumarães</sub>](https://github.com/NaraGuimma)|
-| :---: | :---: |
-
-
+| [<img src="https://avatars.githubusercontent.com/u/60799028?v=4" width=115><br><sub>Ana Lakitini</sub>](https://github.com/analakitini) | [<img src="https://avatars.githubusercontent.com/u/60753347?s=96&v=4" width=115><br><sub>Maiara Moreira</sub>](https://github.com/maiara27) | [<img src="https://avatars.githubusercontent.com/u/46038257?v=4" width=115><br><sub>Viviane Ferreira Lara</sub>](https://github.com/ViFLara)| [<img src="https://avatars.githubusercontent.com/u/32341930?v=4" width=115><br><sub>Yesmin Lahoud</sub>](https://github.com/yesminmarie)|
+| :---: | :---: | :---: |:---: |

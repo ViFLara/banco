@@ -1,17 +1,12 @@
 
 <p align="center">
-      <a href="https://github.com/ViFLara/cravoecanela_backend/commits/dev">
-        <img alt="GitHub last commit" src="https://img.shields.io/badge/last%20commit-%20September%202022-yellow">
+      <a href="https://github.com/ViFLara/banco/commits/main">
+            <img alt="GitHub last commit" src="https://img.shields.io/badge/last%20commit-%20November%202022-yellow">
       </a>
       </a>
-      <a href="https://github.com/ViFLara">
-      <img alt="Feito por Viviane Ferreira Lara" src="https://img.shields.io/badge/feito%20por-ViFLara-yellow">
-      </a>
-      <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellowgreen"/>
-      <a href="https://github.com/PriscilaTuppy">
-        <img alt="Feito por Priscila Tuppy" src="https://img.shields.io/badge/feito%20por-PriscilaTuppy-yellow">   
-      <img alt="GitHub last commit" src="https://img.shields.io/badge/release%20date-%20September%202022-yellowgreen">
       <img alt="GitHub last commit" src="https://img.shields.io/badge/project%20-%20backend-yellowgreen">
+      <img alt="GitHub last commit" src="https://img.shields.io/badge/release%20date-%20November%202022-yellowgreen">
+      <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellowgreen">   
 </p>
 
 # <h1 align="center">WomanBank Backend - Gama Academy![woman_bank](https://user-images.githubusercontent.com/32341930/203182355-5325de51-eeeb-45ed-ac9e-667f1d391784.png)</h1>

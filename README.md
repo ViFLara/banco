@@ -20,11 +20,11 @@
 
   ## 💻 Sobre o projeto
   
-  <p align="justify"> A Consultoria Fictícia Cravo&Canela, está construindo uma nova plataforma e precisa de uma API para gerenciar as transações. Utilizamos nossas habilidades em backend com Java, Banco de dados, AWS e em Frontend com Html, Css e Javascript para a construção da plataforma. O sistema permite realizar cadastro, edição e exclusão de novos clientes, visto que cada cliente está atrelado a uma conta única (com todos os dados inclusos) que registra o histórico de sua movimentação.
-      
- <p align="justify"> Metodologias Ágeis foram empregadas para a definição dos entregaveís através do Trello como ferramenta para criação do backlog, detalhamento das tarefas, no formato Kanban padrão "to do, doing, done" e definição de responsável e de data de entrega das tarefas nos cards.
+  <p align="justify"> Para o desafio final do programa #ElasTech, foi proposto criar um sistema para gerenciar clientes e transações. Nosso banco fictício se chama "WomanBank" e para construir essa API aplicamos nossas habilidades de Java e Banco de Dados. </p>
+  <p align="justify"> Esse sistema permite o cadastro de novos clientes, incluindo dados pessoais e dados para contato. O cliente pode ser atrelado a uma conta bancária com um valor inicial de saldo. Também é possível fazer transferências de um cliente para outro e o histórico de transações entre as contas fica registrado na base e pode ser exibido pelo sistema. </p>
+ <p align="justify"> Aplicamos Metodologias Ágeis e utilizamos a ferramenta Trello para a criação do backlog e detalhamento das tarefas no formato Kanban, seguindo o padrão "to do, doing, done" e definição dos responsáveis.
   
-   Projeto desenvolvido durante o treinamento **Mulheres em Cloud** oferecida pela [Gama Academy em parceria com a McKinsey & Company](https://mulheresemcloud.corporate.gama.academy/).</p>
+   Projeto desenvolvido durante o treinamento **#ElasTech** oferecida pela [Gama Academy em parceria com a PagBank PagSeguro](https://www.youtube.com/watch?v=SozRQEsWDS4).</p>
   
   ---
 

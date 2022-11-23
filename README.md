@@ -93,10 +93,9 @@
  ### Modelagem para criação do banco de dados
 # <h1 align="center"> <img width="715" alt="DiagramaWorkbanch" src="https://user-images.githubusercontent.com/32341930/203400183-d94ae3e8-fabc-4a3a-96a3-be827913985b.png"></h1>
 
- ### Pré-requisitos
-  <p> Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-  [Git](https://git-scm.com) e um ter um editor para trabalhar com o código como [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) </p>
- 
+ ### Pré-requisitos para o Backend
+  Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+  [Git](https://git-scm.com) e um ter um editor para trabalhar com o código como [IntelliJ](https://www.jetbrains.com/idea/download/#section=windows) 
  ---
  
 ## 🛠 Tecnologias

@@ -1,17 +1,19 @@
 
 <p align="center">
       <a href="https://github.com/ViFLara/banco/commits/main">
-            <img alt="GitHub last commit" src="https://img.shields.io/badge/last%20commit-%20November%202022-yellow">
+            <img alt="GitHub last commit" src="https://img.shields.io/badge/last%20commit-%20November%202022-blue">
       </a>
       </a>
-      <img alt="GitHub last commit" src="https://img.shields.io/badge/project%20-%20backend-yellowgreen">
-      <img alt="GitHub last commit" src="https://img.shields.io/badge/release%20date-%20November%202022-yellowgreen">
-      <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellowgreen">   
+      <img alt="GitHub last commit" src="https://img.shields.io/badge/project%20-%20backend-blue">
+      <img alt="GitHub last commit" src="https://img.shields.io/badge/release%20date-%20November%202022-blue">
+      <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue">   
 </p>
 
-# <h1 align="center">WomanBank Backend - Gama Academy![woman_bank](https://user-images.githubusercontent.com/32341930/203182355-5325de51-eeeb-45ed-ac9e-667f1d391784.png)</h1>
+# <h1 align="center">WomanBank Backend - Gama Academy!</h1>
 
-
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/32341930/203182355-5325de51-eeeb-45ed-ac9e-667f1d391784.png">  
+</p>
 
   ## 💻 Sobre o projeto
   

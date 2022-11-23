@@ -114,5 +114,5 @@
 ## 👨‍💻 Contribuidores 
 
 
-| [<img src="https://avatars.githubusercontent.com/u/60799028?v=4" width=115><br><sub>Ana Lakitini</sub>](https://github.com/analakitini) | [<img src="https://avatars.githubusercontent.com/u/60753347?s=96&v=4" width=115><br><sub>Maiara Moreira</sub>](https://github.com/maiara27) | [<img src="https://avatars.githubusercontent.com/u/46038257?v=4" width=115><br><sub>Viviane Ferreira Lara</sub>](https://github.com/ViFLara)| [<img src="https://avatars.githubusercontent.com/u/32341930?v=4" width=115><br><sub>Yesmin Lahoud</sub>](https://github.com/yesminmarie)|
+| [<img src="https://avatars.githubusercontent.com/u/60799028?v=4" width=115><br><sub>Ana Lakitini</sub>](https://github.com/analakitini) | [<img src="https://avatars.githubusercontent.com/u/60753347?s=96&v=4" width=115><br><sub>Maiara Moreira</sub>](https://github.com/maiara27) | [<img src="https://avatars.githubusercontent.com/u/46038257?v=4" width=115><br><sub>Viviane Lara</sub>](https://github.com/ViFLara)| [<img src="https://avatars.githubusercontent.com/u/32341930?v=4" width=115><br><sub>Yesmin Lahoud</sub>](https://github.com/yesminmarie)|
 | :---: | :---: | :---: |:---: |

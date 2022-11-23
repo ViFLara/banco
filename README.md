@@ -9,7 +9,7 @@
       <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue">   
 </p>
 
-# <h1 align="center">WomanBank Backend - Gama Academy!</h1>
+# <h1 align="center">WomanBank Backend - Gama Academy</h1>
 
 <p align="center">
       <img src="https://user-images.githubusercontent.com/32341930/203182355-5325de51-eeeb-45ed-ac9e-667f1d391784.png">  
